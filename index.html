@@ -1,8 +1,14 @@
 <!DOCTYPE html>
-
 <html>
+    <style>
+        table, th, td {
+          border: 1px solid black;
+          padding: 1px;
+        }
 
+        </style>
     <head>
+        <meta charset="UTF-8">
         <title>Curso Pratico de Smart Contracts por Jeff Prestes & Nathy</title>
     </head>
 
@@ -18,8 +24,44 @@
         <p>link na imagem - <a href="https://github.com/LeBissoli/Solidity"><img src="https://avatars.githubusercontent.com/u/84162785?s=60&v=4" alt="Avatar do GitHub" width="50" height="50"></a></p>
     
     
+        <form name="teste" target="_self" method="POST" autocomplete="on">
+            <table border="1" cellspacing="1" cellpadding="2">
+                <tr>
+                    <td>
+                        <table border="1" cellspacing="0" action="">
+                            <tr>
+                                <td>Nome:</td>
+                                <td><input type="text" name="name"></td>
+                            </tr>
+                            <tr>
+                                <td>Sobrenome:</td>
+                                <td><input type="text" name="surname"></td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>Como ficou sabendo desta página:</p>
+                        <input type="checkbox" id="pagina_1" name="pagina_1" value="site"> Site<br>
+                        <input type="checkbox" id="pagina_2" name="pagina_2" value="emailmarketing"> E-mail Marketing<br>
+                        <input type="checkbox" id="pagina_3" name="pagina_3" value="amigos"> Amigos
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>Quer receber nosso contato:</p>
+                        <input type="radio" name="contato" value="sim"> Sim<br>
+                        <input type="radio" name="contato" value="nao"> Não<br>                      
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="submit" value="Enviar"> <p>&#128512;</p><p>&#128567;</p>
+                    </td>
+                </tr>
+            </table>
+        </form>
     </body>
-
-
 
 </html>
