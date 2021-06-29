@@ -1,67 +1,197 @@
-<!DOCTYPE html>
 <html>
-    <style>
-        table, th, td {
-          border: 1px solid black;
-          padding: 1px;
-        }
-
-        </style>
-    <head>
-        <meta charset="UTF-8">
-        <title>Curso Pratico de Smart Contracts por Jeff Prestes & Nathy</title>
-    </head>
-
-    <body>
-        <h1>Aula com uso de HTML</h1>
-        <br>
-        <h2>Conectando a um Smart Contract</h2>
-        <br>
-        <p>Descrevendo como isso funciona...</p>
+    <html lang="pt-BR">
         
-        <p><a href="https://github.com/LeBissoli/Solidity">Clique aqui</a> para acessar o endereço do GitHub do Leandro Bissoli - <img src="https://avatars.githubusercontent.com/u/84162785?s=60&v=4" alt="Avatar do GitHub" width="50" height="50"></p>
+    <head>
+        <meta charset="utf-8">
+        <style>
+            body {
+                background-color: rgb(38, 43, 39);
+            }
+            
+            .table_Externa {
+                border: 3px solid black;
+            }
+            
+            table, th, td {
+                border: 0x solid black;
+                padding: 5px;
+                border-collapse: collapse;
+                background-color: rgb(100, 100, 100);
 
-        <p>link na imagem - <a href="https://github.com/LeBissoli/Solidity"><img src="https://avatars.githubusercontent.com/u/84162785?s=60&v=4" alt="Avatar do GitHub" width="50" height="50"></a></p>
-    
-    
-        <form name="teste" target="_self" method="POST" autocomplete="on">
-            <table border="1" cellspacing="1" cellpadding="2">
+            }
+            td {
+                border: 1px solid black;
+                padding: 5px;
+                border-collapse: collapse;
+            }
+            .td_Escuro{
+                background-color: rgb(36, 36, 36);
+                height: 40px;
+            }
+            .td_Claro{
+                background-color: rgb(100, 100, 100);
+            }
+            .txtPq {
+                color: solid black;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                font-size: 12px;
+            }   
+            .txtPergunta {
+                color: rgb(54, 133, 65);
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                font-size: 16px;
+                font-weight: bolder;
+            }   
+            .txtValoresOuro {
+                color: rgb(224, 179, 55);
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                font-size: 16px;
+                font-weight:normal;
+            } 
+            .txtBrancoTitulo{
+                color: rgb(255, 255, 255);
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                font-size: 15px;
+                font-weight:normal;
+            }
+            .txtBranco{
+                color: rgb(255, 255, 255);
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                font-size: 13px;
+                font-weight:normal;
+            } 
+            .txtTituloBranco{
+                color: rgb(255, 255, 255);
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                font-size: 35px;
+                font-weight:bold;
+            }
+            .txtTituloVermelho{
+                color: rgb(143, 3, 3);
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                font-size: 35px;
+                font-weight:bold;
+            }
+        </style>
+        <title>Block Bet - Apostas em Blockchain</title>
+    </head>
+    <body>
+        <form name="formBet" action="" method="GET">
+        <table style="width:100%" class="table_Externa">
+            <tbody>
                 <tr>
-                    <td>
-                        <table border="1" cellspacing="0" action="">
-                            <tr>
-                                <td>Nome:</td>
-                                <td><input type="text" name="name"></td>
-                            </tr>
-                            <tr>
-                                <td>Sobrenome:</td>
-                                <td><input type="text" name="surname"></td>
-                            </tr>
+                    <td style="width:100%; height:100px;"><div style="text-align: center;"><div class="txtTituloBranco">Block<div class="txtTituloVermelho">Bet</div></div></td>
+                </tr>
+                <tr>
+                    <td style="width: 100%; height: 40px; text-align: right"><div class="txtPq">27/06/2021 18:54:33</div></td>
+                </tr>
+                <tr>
+                    <td style="width: 100%" class="td_Escuro"><div class="txtPergunta">&gt; Selecione a partida</div></td>
+                </tr>
+                <tr>
+                    <td style="width: 100%">
+                        <select id="partida" name="partida">
+                            <option value="0">Partida 0 - Time 1 x Time 2</option>
+                            <option value="1">Partida 1 - Time 1 x Time 2</option>
+                            <option value="2">Partida 2 - Time 3 x Time 4</option>
+                            <option value="3">Partida 3 - Time 1 x Time 3</option>
+                            <option value="4">Partida 4 - Time 2 x Time 4</option>
+                        </select>                         
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 100%"><br></td>
+                </tr>
+                <tr>
+                    <td style="width: 100%" class="td_Escuro"><div class="txtPergunta">&gt; Qual &eacute; a sua aposta para esta partida</div></td>
+                </tr>
+                <tr>
+                    <td style="width: 100%; padding: 0px;">
+                        <table style="width: 50%; border: 0px;">
+                            <tbody>
+                                <tr style="height: 35px;">
+                                    <td style="width: 3%; border: 0px; text-align: center;"><input type="radio" id="aposta" name="aposta" value="1"></td>
+                                    <td style="width: 97%; border: 0px;" class="txtBranco">Time 1 vence</td>
+                                </tr>
+                                <tr style="height: 35px;">
+                                    <td style="width: 3%; text-align: center; border: 0px;"><input type="radio" id="aposta" name="aposta" value="1"></td>
+                                    <td style="width: 97%; border: 0px;" class="txtBranco">Time 2 vence</td>
+                                </tr>
+                                <tr style="height: 35px;">
+                                    <td style="width: 3%; text-align: center; border: 0px;"><input type="radio" id="aposta" name="aposta" value="3"></td>
+                                    <td style="width: 97%; border: 0px;" class="txtBranco">Empate</td>
+                                </tr>
+                            </tbody>
                         </table>
                     </td>
                 </tr>
                 <tr>
-                    <td>
-                        <p>Como ficou sabendo desta página:</p>
-                        <input type="checkbox" id="pagina_1" name="pagina_1" value="site"> Site<br>
-                        <input type="checkbox" id="pagina_2" name="pagina_2" value="emailmarketing"> E-mail Marketing<br>
-                        <input type="checkbox" id="pagina_3" name="pagina_3" value="amigos"> Amigos
-                    </td>
+                    <td style="width: 100%"><br></td>
                 </tr>
                 <tr>
-                    <td>
-                        <p>Quer receber nosso contato:</p>
-                        <input type="radio" name="contato" value="sim"> Sim<br>
-                        <input type="radio" name="contato" value="nao"> Não<br>                      
-                    </td>
+                    <td style="width: 100%"class="td_Escuro"><div class="txtPergunta">&gt; Qual &eacute; o valor da sua aposta</div></td>
                 </tr>
                 <tr>
-                    <td>
-                        <input type="submit" value="Enviar"> <p>&#128512;</p><p>&#128567;</p>
+                    <td style="width: 100%;"><input type="number" id="valor" name="valor" min="0"></td>
+                </tr>
+                <tr><td style="width: 100%;"><br></td>
+                </tr>
+                <tr><td style="width: 100%; text-align:center;"><input type="reset" value="Limpar"> :: <input type="submit" value="Apostar"></td>
+                </tr>
+                <tr>
+                    <td style="width: 100%"><br></td>
+                </tr>
+                <tr>
+                    <td style="width: 100.0000%"class="td_Escuro"><div class="txtPergunta">::: Acompanhe as partidas</div></td>
+                </tr>
+                <tr>
+                    <td style="width: 100%; padding:0px">
+                        <table style="width: 100%">
+                            <tbody>
+                                <tr style="height: 40px;">
+                                    <td style="width: 30%" class="txtBrancoTitulo">PARTIDA</td>
+                                    <td style="width: 10%" class="txtBrancoTitulo"><div style="text-align: center">1</div></td>
+                                    <td style="width: 10%"class="txtBrancoTitulo"><div style="text-align: center">x</div></td>
+                                    <td style="width: 10%" class="txtBrancoTitulo"><div style="text-align: center">2</div></td>
+                                    <td style="width: 20%"class="txtBrancoTitulo"><div style="text-align: center">APOSTAS</div></td>
+                                </tr>
+                                <tr>
+                                    <td style="width: 20%; padding:0px">
+                                        <table style="width:100%; border: 0px;">
+                                            <tbody>
+                                                <tr style="height: 25px;">
+                                                    <td style="width: 75%;border: 0px;" class="txtBranco">Time 1</td>
+                                                    <td style="width: 25%;border: 0px; text-align: center"class="txtBranco">1</div></td>
+                                                </tr>
+                                                <tr style="height: 25px">
+                                                    <td style="width: 75%;border: 0px;" class="txtBranco">Time 2</td>
+                                                    <td style="width: 25%;border: 0px;text-align: center"class="txtBranco">2</td>
+                                                </tr>
+                                                <tr style="height: 15px">
+                                                    <td style="width: 75%; border: 0px;" class="txtPq">26/06/2021 21:40</td>
+                                                    <td style="width: 25%; border: 0px;"><br></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                    <td style="width: 20%; text-align: center;" class="txtValoresOuro">1.50</td>
+                                    <td style="width: 20%; text-align: center;"class="txtValoresOuro">2.50</td>
+                                    <td style="width: 20%; text-align: center;"class="txtValoresOuro">3.25</td>
+                                    <td style="width: 20%; text-align: center;"class="txtValoresOuro">2000</td>
+                                </tr>
+                                <tr>
+                                    <td style="width: 20.0345%;">REPETIR AQUI</td>
+                                    <td style="width: 20.0345%; text-align: center;"><br></td>
+                                    <td style="width: 19.9655%; text-align: center;"><br></td>
+                                    <td style="width: 19.9655%; text-align: center;"><br></td>
+                                    <td style="width: 20%; text-align: center;"><br></td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </td>
                 </tr>
-            </table>
-        </form>
+            </tbody>
+        </table>
+    </form>
     </body>
-
 </html>
