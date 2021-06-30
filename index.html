@@ -2,6 +2,9 @@
     <html lang="pt-BR">
         
     <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
         <meta charset="utf-8">
         <style>
             body {
@@ -77,10 +80,10 @@
     </head>
     <body>
         <form name="formBet" action="" method="GET">
-        <table style="width:100%" class="table_Externa">
+        <table style="width:450px;" class="table_Externa" align="center">
             <tbody>
                 <tr>
-                    <td style="width:100%; height:100px;"><div style="text-align: center;"><div class="txtTituloBranco">Block<div class="txtTituloVermelho">Bet</div></div></td>
+                    <td style="width:100%; height:70px;"><div style="text-align: center;"><span class="txtTituloBranco">Block</span> <span class="txtTituloVermelho">Bet</span></td>
                 </tr>
                 <tr>
                     <td style="width: 100%; height: 40px; text-align: right"><div class="txtPq">27/06/2021 18:54:33</div></td>
@@ -103,23 +106,23 @@
                     <td style="width: 100%"><br></td>
                 </tr>
                 <tr>
-                    <td style="width: 100%" class="td_Escuro"><div class="txtPergunta">&gt; Qual &eacute; a sua aposta para esta partida</div></td>
+                    <td style="width: 100%" class="td_Escuro"><div class="txtPergunta">&gt; Qual será o resultado desta partida?</div></td>
                 </tr>
                 <tr>
                     <td style="width: 100%; padding: 0px;">
-                        <table style="width: 50%; border: 0px;">
+                        <table style="width: 90%; border: 0px;">
                             <tbody>
                                 <tr style="height: 35px;">
                                     <td style="width: 3%; border: 0px; text-align: center;"><input type="radio" id="aposta" name="aposta" value="1"></td>
                                     <td style="width: 97%; border: 0px;" class="txtBranco">Time 1 vence</td>
                                 </tr>
                                 <tr style="height: 35px;">
-                                    <td style="width: 3%; text-align: center; border: 0px;"><input type="radio" id="aposta" name="aposta" value="1"></td>
-                                    <td style="width: 97%; border: 0px;" class="txtBranco">Time 2 vence</td>
-                                </tr>
-                                <tr style="height: 35px;">
                                     <td style="width: 3%; text-align: center; border: 0px;"><input type="radio" id="aposta" name="aposta" value="3"></td>
                                     <td style="width: 97%; border: 0px;" class="txtBranco">Empate</td>
+                                </tr>
+                                <tr style="height: 35px;">
+                                    <td style="width: 3%; text-align: center; border: 0px;"><input type="radio" id="aposta" name="aposta" value="2"></td>
+                                    <td style="width: 97%; border: 0px;" class="txtBranco">Time 2 vence</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -129,10 +132,10 @@
                     <td style="width: 100%"><br></td>
                 </tr>
                 <tr>
-                    <td style="width: 100%"class="td_Escuro"><div class="txtPergunta">&gt; Qual &eacute; o valor da sua aposta</div></td>
+                    <td style="width: 100%"class="td_Escuro"><div class="txtPergunta">&gt; Quantas cotas quer apostar?</div></td>
                 </tr>
                 <tr>
-                    <td style="width: 100%;"><input type="number" id="valor" name="valor" min="0"></td>
+                    <td style="width: 100%;" class="txtBranco"><input type="number" id="valor" name="valor" min="0"> cotas</td>
                 </tr>
                 <tr><td style="width: 100%;"><br></td>
                 </tr>
@@ -142,14 +145,14 @@
                     <td style="width: 100%"><br></td>
                 </tr>
                 <tr>
-                    <td style="width: 100.0000%"class="td_Escuro"><div class="txtPergunta">::: Acompanhe as partidas</div></td>
+                    <td style="width: 100.0000%"class="td_Escuro"><div class="txtPergunta">:: Acompanhe as apostas desta partida ::</div></td>
                 </tr>
                 <tr>
                     <td style="width: 100%; padding:0px">
                         <table style="width: 100%">
                             <tbody>
                                 <tr style="height: 40px;">
-                                    <td style="width: 30%" class="txtBrancoTitulo">PARTIDA</td>
+                                    <td style="width: 40%" class="txtBrancoTitulo">PARTIDA</td>
                                     <td style="width: 10%" class="txtBrancoTitulo"><div style="text-align: center">1</div></td>
                                     <td style="width: 10%"class="txtBrancoTitulo"><div style="text-align: center">x</div></td>
                                     <td style="width: 10%" class="txtBrancoTitulo"><div style="text-align: center">2</div></td>
@@ -168,8 +171,7 @@
                                                     <td style="width: 25%;border: 0px;text-align: center"class="txtBranco">2</td>
                                                 </tr>
                                                 <tr style="height: 15px">
-                                                    <td style="width: 75%; border: 0px;" class="txtPq">26/06/2021 21:40</td>
-                                                    <td style="width: 25%; border: 0px;"><br></td>
+                                                    <td style="border-style: none; border-color: inherit; border-width: 0px;" class="txtPq" colspan="2">26/06/2021 21:40<br></td>
                                                 </tr>
                                             </tbody>
                                         </table>
@@ -179,13 +181,6 @@
                                     <td style="width: 20%; text-align: center;"class="txtValoresOuro">3.25</td>
                                     <td style="width: 20%; text-align: center;"class="txtValoresOuro">2000</td>
                                 </tr>
-                                <tr>
-                                    <td style="width: 20.0345%;">REPETIR AQUI</td>
-                                    <td style="width: 20.0345%; text-align: center;"><br></td>
-                                    <td style="width: 19.9655%; text-align: center;"><br></td>
-                                    <td style="width: 19.9655%; text-align: center;"><br></td>
-                                    <td style="width: 20%; text-align: center;"><br></td>
-                                </tr>
                             </tbody>
                         </table>
                     </td>
@@ -193,5 +188,60 @@
             </tbody>
         </table>
     </form>
+
+    <script type="text/javascript" 
+    integrity="sha384-dq8L5gpIcUoGAeHh/6setfxuuDI0ngshPvCvksSAcQMMWCr5cVFAaijT//nxVyjb"
+    crossorigin="anonymous"
+    src="https://cdn-cors.ethers.io/lib/ethers-5.4.0.umd.min.js">
+    </script>
+    
+    <script src="dado-contrato-no-ethereum.js"></script>
+
+    <script>
+
+    function getFormData() {
+        alert(document.frmImovel.paramLocator.value + " " + document.frmImovel.paramRenter.value);
+        //event.preventDefault();
+    }
+
+    async function getRentalContractData() {
+      let contractNumberField = document.getElementById("contractNumber"); // Let = variável que funciona dentro da função
+      const userInput = contractNumberField.value * 1;
+      alert("valorInformadoPeloUsuario: " + userInput);
+
+      try {
+        const arrayRentalData = await smartContract.rentals(userInput);
+        console.log(arrayRentalData);
+        //Modo mais verboso
+        let showLocator = document.getElementById("locator");
+        showLocator.innerText = arrayRentalData[0];
+        //Modo sintetico onde se concatena um comando junto a outro na mesma linha
+        document.getElementById("renter").innerText = arrayRentalData[1];
+        document.getElementById("addressHome").innerText = arrayRentalData[2];
+        document.getElementById("rentalValue").innerText = arrayRentalData[3];
+      } 
+      catch (err) {
+        console.error(err);
+        document.getElementById("locator").innerText = "";
+        document.getElementById("renter").innerText = "";
+        document.getElementById("addressHome").innerText = "";
+        document.getElementById("rentalValue").innerText = "";
+        contractNumberField.value = 0;
+        alert("Houve um erro ao buscar o contrato de numero: " + userInput);
+      }
+    }
+    // AQUI começa a magica da conexão com o METAMASK
+
+    try {
+      const provider = new ethers.providers.Web3Provider(window.ethereum); // Abro a conexão com a rede ethereum
+      const signer = provider.getSigner(); // pego o usuário/assinante
+      //sc = smart contract
+      smartContract = new ethers.Contract(contractAddress, ABI, provider); // me conecto ao contrato, com o mapa de variáveis, com o provedor de conexão
+      smartContractWithSigner = smartContract.connect(signer); // Agora eu me conecto ao contrato
+    }
+    catch (err) {
+      console.error(err);
+    }
+  </script>
     </body>
 </html>
