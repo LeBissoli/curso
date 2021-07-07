@@ -3,7 +3,7 @@ async function autoLoadPartidas() {
     try {
       var listaApostas = await smartContract.listarApostas(0);
       console.log(listaApostas);
-      document.getElementById("listaPartidas").innerText = listaApostas(0).valorAposta;
+      document.getElementById("listaPartidas").innerText = listaApostas[0].valorAposta;
     } catch (err) {
       console.error(err);
       alert("Houve um erro no contrato");
