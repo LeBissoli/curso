@@ -1,0 +1,146 @@
+<html>
+    <html lang="pt-BR">
+        
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="estilo-pagina.css">
+        <title>Block Bet - Apostas em Blockchain</title>
+    </head>
+    <body onload="autoLoadPartidas()">
+        <form name="formBet" action="" method="GET">
+        <table style="width:450px;" class="table_Externa" align="center">
+            <tbody>
+                <tr>
+                    <td style="width:100%; height:70px;"><div style="text-align: center;"><span class="txtTituloBranco">Block</span> <span class="txtTituloVermelho">Bet</span></td>
+                </tr>
+                <tr>
+                    <td style="width: 100%; height: 40px; text-align: right"><div class="txtPq">27/06/2021 18:54:33</div></td>
+                </tr>
+                <tr>
+                    <td style="width: 100%" class="td_Escuro"><div class="txtPergunta">&gt; Selecione a partida</div></td>
+                </tr>
+                <tr>
+                    <td style="width: 100%">
+                        <select id="partida" name="partida">
+                            <option value="0">Partida 0 - Time 1 x Time 2</option>
+                            <option value="1">Partida 1 - Time 1 x Time 2</option>
+                            <option value="2">Partida 2 - Time 3 x Time 4</option>
+                            <option value="3">Partida 3 - Time 1 x Time 3</option>
+                            <option value="4">Partida 4 - Time 2 x Time 4</option>
+                        </select>                         
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 100%"><br></td>
+                </tr>
+                <tr>
+                    <td style="width: 100%" class="td_Escuro"><div class="txtPergunta">&gt; Qual será o resultado desta partida?</div></td>
+                </tr>
+                <tr>
+                    <td style="width: 100%; padding: 0px;">
+                        <table style="width: 90%; border: 0px;">
+                            <tbody>
+                                <tr style="height: 35px;">
+                                    <td style="width: 3%; border: 0px; text-align: center;"><input type="radio" id="aposta" name="aposta" value="1"></td>
+                                    <td style="width: 97%; border: 0px;" class="txtBranco">Time 1 vence</td>
+                                </tr>
+                                <tr style="height: 35px;">
+                                    <td style="width: 3%; text-align: center; border: 0px;"><input type="radio" id="aposta" name="aposta" value="3"></td>
+                                    <td style="width: 97%; border: 0px;" class="txtBranco">Empate</td>
+                                </tr>
+                                <tr style="height: 35px;">
+                                    <td style="width: 3%; text-align: center; border: 0px;"><input type="radio" id="aposta" name="aposta" value="2"></td>
+                                    <td style="width: 97%; border: 0px;" class="txtBranco">Time 2 vence</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 100%"><br></td>
+                </tr>
+                <tr>
+                    <td style="width: 100%"class="td_Escuro"><div class="txtPergunta">&gt; Quantas cotas quer apostar?</div></td>
+                </tr>
+                <tr>
+                    <td style="width: 100%;" class="txtBranco"><input type="number" id="valor" name="valor" min="0"> cotas</td>
+                </tr>
+                <tr><td style="width: 100%;"><br></td>
+                </tr>
+                <tr><td style="width: 100%; text-align:center;"><input type="reset" value="Limpar"> :: <input type="submit" value="Apostar"></td>
+                </tr>
+                <tr>
+                    <td style="width: 100%"><br></td>
+                </tr>
+                <tr>
+                    <td style="width: 100.0000%"class="td_Escuro"><div class="txtPergunta">:: Acompanhe as apostas desta partida ::</div></td>
+                </tr>
+                <tr>
+                    <td style="width: 100%; padding:0px">
+                        <table style="width: 100%">
+                            <tbody>
+                                <tr style="height: 40px;">
+                                    <td style="width: 40%" class="txtBrancoTitulo">PARTIDA</td>
+                                    <td style="width: 10%" class="txtBrancoTitulo"><div style="text-align: center">1</div></td>
+                                    <td style="width: 10%"class="txtBrancoTitulo"><div style="text-align: center">x</div></td>
+                                    <td style="width: 10%" class="txtBrancoTitulo"><div style="text-align: center">2</div></td>
+                                    <td style="width: 20%"class="txtBrancoTitulo"><div style="text-align: center">APOSTAS</div></td>
+                                </tr>
+                                <tr>
+                                    <td style="width: 20%; padding:0px">
+                                        <table style="width:100%; border: 0px;">
+                                            <tbody>
+                                                <tr style="height: 25px;">
+                                                    <td style="width: 75%;border: 0px;" class="txtBranco">Time 1</td>
+                                                    <td style="width: 25%;border: 0px; text-align: center"class="txtBranco">1</div></td>
+                                                </tr>
+                                                <tr style="height: 25px">
+                                                    <td style="width: 75%;border: 0px;" class="txtBranco">Time 2</td>
+                                                    <td style="width: 25%;border: 0px;text-align: center"class="txtBranco">2</td>
+                                                </tr>
+                                                <tr style="height: 15px">
+                                                    <td style="border-style: none; border-color: inherit; border-width: 0px;" class="txtPq" colspan="2">26/06/2021 21:40<br></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                    <td style="width: 20%; text-align: center;" class="txtValoresOuro">1.50</td>
+                                    <td style="width: 20%; text-align: center;"class="txtValoresOuro">2.50</td>
+                                    <td style="width: 20%; text-align: center;"class="txtValoresOuro">3.25</td>
+                                    <td style="width: 20%; text-align: center;"class="txtValoresOuro">2000</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+
+    <script type="text/javascript" 
+    integrity="sha384-dq8L5gpIcUoGAeHh/6setfxuuDI0ngshPvCvksSAcQMMWCr5cVFAaijT//nxVyjb"
+    crossorigin="anonymous"
+    src="https://cdn-cors.ethers.io/lib/ethers-5.4.0.umd.min.js">
+    </script>
+
+
+    <script src="dadosContratoEthereum.js"></script>
+    <script src="funcoesContratoEthereum.js"></script>
+
+    <script>
+        // AQUI começa a magica da conexão com o METAMASK
+        try {
+            const provider = new ethers.providers.Web3Provider(window.ethereum); // Abro a conexão com a rede ethereum
+            const signer = provider.getSigner(); // pego o usuário/assinante
+            //sc = smart contract
+            smartContract = new ethers.Contract(contractAddress, ABI, provider); // me conecto ao contrato, com o mapa de variáveis, com o provedor de conexão
+            smartContractWithSigner = smartContract.connect(signer); // Agora eu me conecto ao contrato
+        }
+        catch (err) {
+            console.error(err);
+        }
+  </script>
+    </body>
+</html>
