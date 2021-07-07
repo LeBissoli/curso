@@ -1,7 +1,7 @@
 
 async function autoLoadPartidas() {
     try {
-      var listaApostas = await smartContract.valorTotalCustodia();
+      var listaApostas = await smartContract.listarApostas(0);
       console.log(listaApostas);
       document.getElementById("listaPartidas").innerText = listaApostas;
     } catch (err) {
