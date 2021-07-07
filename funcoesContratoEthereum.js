@@ -1,9 +1,9 @@
 
 async function autoLoadPartidas() {
     try {
-      var listaPartidas = await smartContract.Partidas;
-      console.log(listaPartidas);
-      document.getElementById("listaPartidas").innerText = listaPartidas;
+      var listaApostas = await smartContract.valorTotalCustodia();
+      console.log(listaApostas);
+      document.getElementById("listaPartidas").innerText = listaApostas;
     } catch (err) {
       console.error(err);
       alert("Houve um erro no contrato");
