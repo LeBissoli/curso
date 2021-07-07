@@ -1,12 +1,12 @@
 
 async function autoLoadPartidas() {
     try {
-      var valorApostas = await smartContract.valorTotalCustodia();
-      console.log(valorApostas);
-      document.getElementById("listaPartidas").innerText = valorApostas;
+      var listaPartidas = await smartContract.Partidas;
+      console.log(listaPartidas);
+      document.getElementById("listaPartidas").innerText = listaPartidas;
     } catch (err) {
       console.error(err);
-      alert("Houve um erro no contrato 22");
+      alert("Houve um erro no contrato");
     }
   }
 
