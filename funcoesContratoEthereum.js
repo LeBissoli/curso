@@ -1,9 +1,9 @@
 
 async function autoLoadPartidas() {
     try {
-      const listagemApostas = await smartContract.listarApostas();
+      const valorApostas = await smartContract.valorTotalApostasPartida();
       console.log(listagemApostas);
-      document.getElementById("listaPartidas").innerText = listagemApostas;
+      document.getElementById("listaPartidas").innerText = valorApostas;
     } catch (err) {
       console.error(err);
       alert("Houve um erro ao buscar o proprietário do contrato");
