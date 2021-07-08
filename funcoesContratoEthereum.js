@@ -1,9 +1,9 @@
 
 async function autoLoadPartidas() {
     try {
-      var listaApostas = await smartContract.listarApostas(0);
-      console.log(listaApostas);
-      document.getElementById("listaPartidas").innerText = listaApostas[0].valorAposta;
+      var listaPartidasAbertas = await smartContract.listarPartidasAtivasOracle();
+      console.log(listaPartidasAbertas);
+      document.getElementById("listaPartidas").innerText = listaPartidasAbertas;
     } catch (err) {
       console.error(err);
       alert("Houve um erro no contrato");
