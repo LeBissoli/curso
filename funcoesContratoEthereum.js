@@ -3,7 +3,17 @@ async function autoLoadPartidas() {
     try {
       var listaPartidasAbertas = await smartContract.listarPartidasAtivasOracle();
       console.log(listaPartidasAbertas);
-      document.getElementById("listaPartidas").innerText = listaPartidasAbertas[0];
+      
+      //document.getElementById("listaPartidas").innerText = listaPartidasAbertas[0];
+
+      // Get dropdown element from DOM
+      var dropdown = document.getElementById("SelecaoPartida");
+
+      // Loop through the array
+      for (var i = 0; i < listaPartidasAbertas.length; ++i) {
+        // Append the element to the end of Array list
+        dropdown[dropdown.length] = new Option(i, listaPartidasAbertas[i]);
+      }​
     } catch (err) {
       console.error(err);
       alert("Houve um erro no contrato");
