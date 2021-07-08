@@ -6,9 +6,9 @@ async function autoLoadPartidas() {
       
       //document.getElementById("listaPartidas").innerText = listaPartidasAbertas[0];
       // Carregando o select
-      for (let i = 0; i < listaPartidasAbertas.length; i++) {
-        $("#SelecaoPartida").append("<option value='" + listaPartidasAbertas[i] + "'>" + listaPartidasAbertas[i] + "</option>");
-      }
+      //for (let i = 0; i < listaPartidasAbertas.length; i++) {
+      //  $("#SelecaoPartida").append("<option value='" + listaPartidasAbertas[i] + "'>" + listaPartidasAbertas[i] + "</option>");
+      //}
 
     } catch (err) {
       console.error(err);
