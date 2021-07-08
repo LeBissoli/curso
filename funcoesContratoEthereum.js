@@ -3,7 +3,7 @@ async function autoLoadPartidas() {
     try {
       var listaPartidasAbertas = await smartContract.listarPartidasAtivasOracle();
       console.log(listaPartidasAbertas);
-      document.getElementById("listaPartidas").innerText = listaPartidasAbertas;
+      document.getElementById("listaPartidas").innerText = listaPartidasAbertas[0];
     } catch (err) {
       console.error(err);
       alert("Houve um erro no contrato");

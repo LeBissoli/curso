@@ -4,105 +4,50 @@ var smartContractWithSigner;
 const ABI = 
 [
 		{
-			"inputs": [],
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "_enderecoContrato",
+					"type": "address"
+				}
+			],
 			"stateMutability": "nonpayable",
 			"type": "constructor"
 		},
 		{
-			"anonymous": false,
 			"inputs": [
 				{
-					"indexed": false,
-					"internalType": "string",
-					"name": "time1_Casa",
-					"type": "string"
-				},
-				{
-					"indexed": false,
-					"internalType": "string",
-					"name": "time2_Visitante",
-					"type": "string"
-				}
-			],
-			"name": "novaPartidaLog",
-			"type": "event"
-		},
-		{
-			"anonymous": false,
-			"inputs": [
-				{
-					"indexed": false,
 					"internalType": "uint256",
-					"name": "_idPartida",
+					"name": "",
 					"type": "uint256"
 				},
-				{
-					"indexed": false,
-					"internalType": "uint256",
-					"name": "_timeVencedor",
-					"type": "uint256"
-				}
-			],
-			"name": "novoResultadoLog",
-			"type": "event"
-		},
-		{
-			"inputs": [
 				{
 					"internalType": "uint256",
 					"name": "",
 					"type": "uint256"
 				}
 			],
-			"name": "Partidas",
+			"name": "listaApostas",
 			"outputs": [
+				{
+					"internalType": "address payable",
+					"name": "carteiraApostador",
+					"type": "address"
+				},
+				{
+					"internalType": "uint256",
+					"name": "idAposta",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "valorAposta",
+					"type": "uint256"
+				},
 				{
 					"internalType": "uint256",
 					"name": "dataRegistro",
 					"type": "uint256"
-				},
-				{
-					"internalType": "string",
-					"name": "time1_Casa",
-					"type": "string"
-				},
-				{
-					"internalType": "uint256",
-					"name": "placarTime1_Casa",
-					"type": "uint256"
-				},
-				{
-					"internalType": "string",
-					"name": "time2_Visitante",
-					"type": "string"
-				},
-				{
-					"internalType": "uint256",
-					"name": "placarTime2_Visitante",
-					"type": "uint256"
-				},
-				{
-					"internalType": "uint256",
-					"name": "timeVencedor",
-					"type": "uint256"
-				},
-				{
-					"internalType": "bool",
-					"name": "resultadoAtualizado",
-					"type": "bool"
-				}
-			],
-			"stateMutability": "view",
-			"type": "function"
-		},
-		{
-			"inputs": [],
-			"name": "admin",
-			"outputs": [
-				{
-					"internalType": "address",
-					"name": "",
-					"type": "address"
 				}
 			],
 			"stateMutability": "view",
@@ -111,70 +56,37 @@ const ABI =
 		{
 			"inputs": [
 				{
-					"internalType": "string",
-					"name": "_time1_Casa",
-					"type": "string"
-				},
-				{
-					"internalType": "string",
-					"name": "_time2_Visitante",
-					"type": "string"
+					"internalType": "uint256",
+					"name": "_idPartida",
+					"type": "uint256"
 				}
 			],
-			"name": "cadastrarNovaPartida",
-			"outputs": [
-				{
-					"internalType": "bool",
-					"name": "",
-					"type": "bool"
-				}
-			],
-			"stateMutability": "nonpayable",
-			"type": "function"
-		},
-		{
-			"inputs": [],
-			"name": "listarPartidas",
+			"name": "listarApostas",
 			"outputs": [
 				{
 					"components": [
 						{
+							"internalType": "address payable",
+							"name": "carteiraApostador",
+							"type": "address"
+						},
+						{
+							"internalType": "uint256",
+							"name": "idAposta",
+							"type": "uint256"
+						},
+						{
+							"internalType": "uint256",
+							"name": "valorAposta",
+							"type": "uint256"
+						},
+						{
 							"internalType": "uint256",
 							"name": "dataRegistro",
 							"type": "uint256"
-						},
-						{
-							"internalType": "string",
-							"name": "time1_Casa",
-							"type": "string"
-						},
-						{
-							"internalType": "uint256",
-							"name": "placarTime1_Casa",
-							"type": "uint256"
-						},
-						{
-							"internalType": "string",
-							"name": "time2_Visitante",
-							"type": "string"
-						},
-						{
-							"internalType": "uint256",
-							"name": "placarTime2_Visitante",
-							"type": "uint256"
-						},
-						{
-							"internalType": "uint256",
-							"name": "timeVencedor",
-							"type": "uint256"
-						},
-						{
-							"internalType": "bool",
-							"name": "resultadoAtualizado",
-							"type": "bool"
 						}
 					],
-					"internalType": "struct OraclePartidas.partida[]",
+					"internalType": "struct PartidaInteface.aposta[]",
 					"name": "",
 					"type": "tuple[]"
 				}
@@ -184,7 +96,7 @@ const ABI =
 		},
 		{
 			"inputs": [],
-			"name": "listarPartidasAtivas",
+			"name": "listarPartidasAtivasOracle",
 			"outputs": [
 				{
 					"internalType": "string[]",
@@ -197,7 +109,7 @@ const ABI =
 		},
 		{
 			"inputs": [],
-			"name": "listarPartidasEncerradas",
+			"name": "listarPartidasEncerradasOracle",
 			"outputs": [
 				{
 					"internalType": "string[]",
@@ -210,7 +122,7 @@ const ABI =
 		},
 		{
 			"inputs": [],
-			"name": "listarQuantidadePartidas",
+			"name": "listarQuantidadePartidasOracle",
 			"outputs": [
 				{
 					"internalType": "uint256",
@@ -230,55 +142,23 @@ const ABI =
 				},
 				{
 					"internalType": "uint256",
-					"name": "_timeVencedor",
-					"type": "uint256"
-				},
-				{
-					"internalType": "uint256",
-					"name": "_placarTime1_Casa",
-					"type": "uint256"
-				},
-				{
-					"internalType": "uint256",
-					"name": "_placarTime2_Visitante",
+					"name": "_idAposta",
 					"type": "uint256"
 				}
 			],
-			"name": "registrarVencedor",
-			"outputs": [
-				{
-					"internalType": "bool",
-					"name": "",
-					"type": "bool"
-				}
-			],
-			"stateMutability": "nonpayable",
+			"name": "registrarAposta",
+			"outputs": [],
+			"stateMutability": "payable",
 			"type": "function"
 		},
 		{
-			"inputs": [
-				{
-					"internalType": "uint256",
-					"name": "_idPartida",
-					"type": "uint256"
-				}
-			],
-			"name": "retornarPartida",
+			"inputs": [],
+			"name": "valorTotalApostas",
 			"outputs": [
 				{
-					"internalType": "uint256",
-					"name": "_idTimeVencedor",
-					"type": "uint256"
-				},
-				{
-					"internalType": "string",
-					"name": "_time1_Casa",
-					"type": "string"
-				},
-				{
-					"internalType": "string",
-					"name": "_time2_Visitante",
-					"type": "string"
+					"internalType": "uint256[]",
+					"name": "_valorTotalApostas",
+					"type": "uint256[]"
 				}
 			],
 			"stateMutability": "view",
@@ -292,11 +172,24 @@ const ABI =
 					"type": "uint256"
 				}
 			],
-			"name": "retornarVencedor",
+			"name": "valorTotalApostasPartida",
+			"outputs": [
+				{
+					"internalType": "uint256[]",
+					"name": "_valorApostasPartida",
+					"type": "uint256[]"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [],
+			"name": "valorTotalCustodia",
 			"outputs": [
 				{
 					"internalType": "uint256",
-					"name": "_idTimeVencedor",
+					"name": "",
 					"type": "uint256"
 				}
 			],
